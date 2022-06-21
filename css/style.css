@@ -1,0 +1,303 @@
+@charset "UTF-8";
+@import url(../css/normalize.css);
+@font-face {
+  font-family: 'Exo2.0-Thin';
+  src: local("Exo-Thin");
+  src: url("../assets/fonts/Exo2.0-Thin.otf");
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Variables */
+body {
+  width: 100vw;
+  font-size: 10px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), color-stop(49.88%, rgba(0, 0, 0, 5e-05)), to(rgba(0, 0, 0, 0.5))), url("../assets/pattern.png");
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 5e-05) 49.88%, rgba(0, 0, 0, 0.5) 100%), url("../assets/pattern.png");
+}
+
+a {
+  color: #1698D9;
+  -webkit-text-decoration-style: dashed;
+          text-decoration-style: dashed;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.wrapper {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1280px;
+  height: 680px;
+  margin: 0 auto;
+}
+
+.title {
+  color: #ffffff;
+  font-family: 'Exo 2.0 Thin', arial;
+  font-weight: 200;
+  font-size: 3.6em;
+  text-align: center;
+  margin-top: 31px;
+}
+
+.cat-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 80px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.cat-items .cat-items__item {
+  cursor: pointer;
+  width: 320px;
+  height: 480px;
+  background: url(../assets/catInCard.png) no-repeat;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.cat-items .cat-items__item:hover {
+  background: url(../assets/BackHover.png) no-repeat;
+}
+
+/* Hover circle block */
+.cat-items__item:hover .circle-first {
+  background: #2EA8E6;
+}
+
+.cat-items__item:hover .circle-second {
+  background: #2EA8E6;
+}
+
+.cat-items__item:hover .circle-third {
+  background: #2EA8E6;
+}
+
+.cat-items__item-description {
+  font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
+  position: relative;
+  top: 1%;
+  left: 16%;
+  width: 211px;
+  height: 154px;
+  text-align: left;
+}
+
+.cat-items__item-description span {
+  color: #666666;
+  font-size: 1.6em;
+  margin-top: 20px;
+  line-height: 3em;
+}
+
+.cat-items__item-description h2 {
+  font-size: 4.8em;
+  line-height: 0.06em;
+  margin-top: 19px;
+  margin-left: -3px;
+}
+
+.cat-items__item-description h3 {
+  font-size: 2.4em;
+  line-height: 0.06em;
+}
+
+.cat-items__item-description p {
+  font-size: 1.4em;
+  padding-top: 2px;
+}
+
+.cat-items__item.select {
+  background: url(../assets/selectedBack.png) no-repeat;
+}
+
+.circle-first {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  top: 126%;
+  left: 82%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #1698d9;
+  color: #ffffff;
+  font-size: 4.2em;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.circle-second {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  top: 126%;
+  left: 82%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #1698d9;
+  color: #ffffff;
+  font-size: 4.2em;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.circle-third {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  top: 114%;
+  left: 82%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #1698d9;
+  color: #ffffff;
+  font-size: 4.2em;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.circle-first::before {
+  content: '0,5';
+  padding-bottom: 12px;
+  margin-left: 20px;
+}
+
+.circle-first::after {
+  content: 'кг';
+  position: relative;
+  top: 27%;
+  right: 49%;
+  font-size: 21px;
+}
+
+.circle-second::before {
+  content: '2';
+  padding-bottom: 12px;
+  margin-left: 20px;
+}
+
+.circle-second::after {
+  content: 'кг';
+  position: relative;
+  top: 27%;
+  right: 27%;
+  font-size: 21px;
+}
+
+.circle-third::before {
+  content: '5';
+  padding-bottom: 12px;
+  margin-left: 20px;
+}
+
+.circle-third::after {
+  content: 'кг';
+  position: relative;
+  top: 29%;
+  right: 27%;
+  font-size: 21px;
+}
+
+.buy {
+  font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
+  color: #ffffff;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.buy span {
+  color: #1698D9;
+}
+
+.buy-one {
+  font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
+  color: #ffffff;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.buy-one span {
+  color: #1698D9;
+}
+
+/* #buy-one {
+    font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
+    color: $description-color;
+    font-size: 1.3em;
+    text-align: center;
+    span {
+        color: $primary-color;
+    }
+} */
+.disable {
+  -webkit-filter: grayscale(80%);
+          filter: grayscale(80%);
+  cursor: default;
+}
+
+.cat-items__item.select {
+  background: url(../assets/selectedBack.png) no-repeat;
+}
+
+.cat-items__item.select:hover {
+  background: url(../assets/selectedBackHover.png) no-repeat;
+}
+
+.cat-items__item.select .circle-first {
+  background: #D91667;
+}
+
+.cat-items__item.select .circle-second {
+  background: #D91667;
+}
+
+.cat-items__item.select .circle-third {
+  background: #D91667;
+}
+
+.cat-items__item.select:hover .circle-first {
+  background: #E52E7A;
+}
+
+.cat-items__item.select:hover .circle-second {
+  background: #E52E7A;
+}
+
+.cat-items__item.select:hover .circle-third {
+  background: #E52E7A;
+}
