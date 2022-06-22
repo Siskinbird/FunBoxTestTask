@@ -1,0 +1,299 @@
+@import url(../css/normalize.css);
+@font-face {
+    font-family: 'Exo2.0-Thin';
+    src: local('Exo-Thin');
+    src: url('../assets/fonts/Exo2.0-Thin.otf');
+    font-style: normal;
+    font-weight: 400; 
+}
+
+
+/* Variables */
+$primary-color: #1698D9;
+$primary-hover-color: #2EA8E6;
+$primary-selected-color: #D91667;
+$primary-selected-hover-color: #E52E7A;
+$description-color: #ffffff;
+$title-color: #000000;
+$subTitle-color: #666666;
+$disabled-color: #B3B3B3;
+$pechalka-color: #FFFF66;
+$back-primary: url(../assets/catInCard.png) no-repeat;
+$back-primary-hover: url(../assets/BackHover.png) no-repeat;
+$back-selected: url(../assets/selectedBack.png) no-repeat;
+$back-selected-hover: url(../assets/selectedBackHover.png) no-repeat;
+$back-gradient: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 5e-05) 49.88%, rgba(0, 0, 0, 0.5) 100%), url('../assets/pattern.png');
+
+body {
+    width: 100vw;
+    font-size: 10px;
+    background-image: $back-gradient;
+}
+
+a {
+    color: $primary-color;
+    text-decoration-style: dashed;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+.wrapper {
+    max-width: 100%;
+}
+
+.container {
+    max-width: 1280px;
+    height: 680px;
+    margin: 0 auto;
+}
+
+.title {
+    color: $description-color;
+    font-family: 'Exo 2.0 Thin', arial;
+    font-weight: 200;
+    font-size: 3.6em;
+    text-align: center;
+    margin-top: 31px;
+}
+
+.cat-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+.cat-items__item {
+    cursor: pointer;
+    width: 320px;
+    height: 480px;
+    background: $back-primary;
+    transition: all .3s;
+    &:hover {
+        background: url(../assets/BackHover.png) no-repeat; 
+    }
+}
+
+/* Hover circle block */
+
+.cat-items__item:hover .circle-first {
+    background: $primary-hover-color;
+}
+
+.cat-items__item:hover .circle-second {
+    background: $primary-hover-color;
+}
+
+.cat-items__item:hover .circle-third {
+    background: $primary-hover-color;
+}
+
+.cat-items__item-description {
+    font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif; 
+    padding-top: 4px;
+    margin-left: 51px;
+    width: 211px;
+    height: 154px;
+    text-align: left;
+
+    span {
+        color: $subTitle-color;
+        font-size: 1.6em;
+        margin-top: 20px;
+        line-height: 3em;
+    }
+
+    h2 {
+        font-size: 4.8em;
+        line-height: 0.06em;
+        margin-top: 19px;
+        margin-left: -3px;
+    }
+
+    h3 {
+        font-size: 2.4em;
+        line-height: 0.06em;
+    }
+
+    p {
+        color: $subTitle-color;
+        font-size: 1.4em;
+        padding-top: 2px;
+    }
+}
+
+.title-span__hide {
+    color: #E52E7A;
+    display: none;
+    font-size: 1.6em;
+    margin-top: 20px;
+    line-height: 3em;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.cat-items__item.select {
+    background: url(../assets/selectedBack.png) no-repeat;
+    .title-span {
+        display: none;
+    }
+    .title-span__hide {
+        display: inline;
+    }
+    .main {
+        display: none;
+    }
+    .hidden{
+        display: block;
+    }
+}
+
+
+.circle-first {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 126%;
+    left: 82%;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgba(22, 152, 217, 1);
+    color: $description-color;
+    font-size: 4.2em;
+    transition: all .3s;
+}
+
+.circle-second {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 126%;
+    left: 82%;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgba(22, 152, 217, 1);
+    color: $description-color;
+    font-size: 4.2em;
+    transition: all .3s;
+}
+
+.circle-third {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 114%;
+    left: 82%;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgba(22, 152, 217, 1);
+    color: $description-color;
+    font-size: 4.2em;
+    transition: all .3s;
+}
+
+.circle-first::before {
+    content: '0,5';
+    padding-bottom: 12px;
+    margin-left: 20px;
+
+}
+
+.circle-first::after {
+    content: 'кг';
+    position: relative;
+    top: 27%;
+    right: 49%;
+    font-size: 21px;
+}
+
+.circle-second::before {
+    content: '2';
+    padding-bottom: 12px;
+    margin-left: 20px;
+
+}
+
+.circle-second::after {
+    content: 'кг';
+    position: relative;
+    top: 27%;
+    right: 27%;
+    font-size: 21px;
+}
+.circle-third::before {
+    content: '5';
+    padding-bottom: 12px;
+    margin-left: 20px;
+
+}
+
+.circle-third::after {
+    content: 'кг';
+    position: relative;
+    top: 29%;
+    right: 27%;
+    font-size: 21px;
+}
+
+.buy {
+    position: relative;
+    top: 67%;
+    left: 0;    
+    font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
+    color: $description-color;
+    font-size: 1.3em;
+    text-align: center;
+    span {
+        color: $primary-color;
+    }
+}
+.buy-one {
+    font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
+    color: $description-color;
+    font-size: 1.3em;
+    text-align: center;
+    span {
+        color: $primary-color;
+    }
+}
+
+.disable {
+    filter: grayscale(80%);
+    cursor: default;
+}
+
+.cat-items__item.select {
+    background: $back-selected;
+    &:hover {
+        background: $back-selected-hover;
+    }
+    .circle-first {
+        background: $primary-selected-color;
+    }
+    .circle-second {
+        background: $primary-selected-color;
+    }
+    .circle-third {
+        background: $primary-selected-color;
+    }
+}
+.cat-items__item.select:hover .circle-first {
+    background: $primary-selected-hover-color;
+}
+.cat-items__item.select:hover .circle-second {
+    background: $primary-selected-hover-color;
+}
+.cat-items__item.select:hover .circle-third {
+    background: $primary-selected-hover-color;
+}

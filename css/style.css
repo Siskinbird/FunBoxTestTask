@@ -58,7 +58,7 @@ a {
       flex-wrap: wrap;
 }
 
-.cat-items .cat-items__item {
+.cat-items__item {
   cursor: pointer;
   width: 320px;
   height: 480px;
@@ -67,7 +67,7 @@ a {
   transition: all .3s;
 }
 
-.cat-items .cat-items__item:hover {
+.cat-items__item:hover {
   background: url(../assets/BackHover.png) no-repeat;
 }
 
@@ -86,9 +86,8 @@ a {
 
 .cat-items__item-description {
   font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
-  position: relative;
-  top: 1%;
-  left: 16%;
+  padding-top: 4px;
+  margin-left: 51px;
   width: 211px;
   height: 154px;
   text-align: left;
@@ -114,12 +113,41 @@ a {
 }
 
 .cat-items__item-description p {
+  color: #666666;
   font-size: 1.4em;
   padding-top: 2px;
 }
 
+.title-span__hide {
+  color: #E52E7A;
+  display: none;
+  font-size: 1.6em;
+  margin-top: 20px;
+  line-height: 3em;
+}
+
+.hidden {
+  display: none;
+}
+
 .cat-items__item.select {
   background: url(../assets/selectedBack.png) no-repeat;
+}
+
+.cat-items__item.select .title-span {
+  display: none;
+}
+
+.cat-items__item.select .title-span__hide {
+  display: inline;
+}
+
+.cat-items__item.select .main {
+  display: none;
+}
+
+.cat-items__item.select .hidden {
+  display: block;
 }
 
 .circle-first {
@@ -234,6 +262,9 @@ a {
 }
 
 .buy {
+  position: relative;
+  top: 67%;
+  left: 0;
   font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
   color: #ffffff;
   font-size: 1.3em;
@@ -255,15 +286,6 @@ a {
   color: #1698D9;
 }
 
-/* #buy-one {
-    font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
-    color: $description-color;
-    font-size: 1.3em;
-    text-align: center;
-    span {
-        color: $primary-color;
-    }
-} */
 .disable {
   -webkit-filter: grayscale(80%);
           filter: grayscale(80%);
