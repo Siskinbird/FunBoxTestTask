@@ -9,15 +9,6 @@ catCard.forEach((item) => {
     item.addEventListener('click', select)
 })
 
-/* catCard.forEach((item) => {
-    item.addEventListener('mouseenter', changeTitle)
-})
-
-catCard.forEach((item) => {
-    item.addEventListener('mouseleave', addTitle)
-}) */
-
-
 function select(e) {
     if(e.currentTarget.classList.contains('select')){
         e.currentTarget.classList.remove('select');
@@ -31,7 +22,8 @@ function select(e) {
 
 catCard.forEach((card) => card.addEventListener('mouseenter', (e) => {
     const element = e.target.closest('.cat-items__item');
-    const elementIndex = Array.prototype.slice.call(catCard).indexOf(element);
+    const elementIndex = [...catCard].indexOf(element);
+    console.table(elementIndex)
     if(element.classList.contains('select')) {
         titleSpan[elementIndex].textContent = 'Котэ не одобряет?';
         titleSpan[elementIndex].style.color =  '#D91667';
@@ -43,7 +35,7 @@ catCard.forEach((card) => card.addEventListener('mouseenter', (e) => {
 
 catCard.forEach((card) => card.addEventListener('mouseleave', (e) => {
     const element = e.target.closest('.cat-items__item');
-    const elementIndex = Array.prototype.slice.call(catCard).indexOf(element);
+    const elementIndex = [...catCard].indexOf(element);
     titleSpan[elementIndex].textContent = 'Сказочное заморское яство';
     titleSpan[elementIndex].style.color =  '#666666';
 }))
