@@ -23,7 +23,6 @@ function select(e) {
 catCard.forEach((card) => card.addEventListener('mouseenter', (e) => {
     const element = e.target.closest('.cat-items__item');
     const elementIndex = [...catCard].indexOf(element);
-    console.table(elementIndex)
     if(element.classList.contains('select')) {
         titleSpan[elementIndex].textContent = 'Котэ не одобряет?';
         titleSpan[elementIndex].style.color =  '#D91667';
